@@ -1,0 +1,19 @@
+body
+{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+div
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+app-product
+{
+    margin: 0px 5px 0px 5px;
+}
