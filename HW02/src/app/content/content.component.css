@@ -1,0 +1,51 @@
+.mainBlock
+{
+    display: flex;
+    margin-top: 10px;
+    color: white;
+}
+
+.column
+{
+    width: 25%;
+}
+
+.aside
+{
+    background-color: #DB92AF;
+    height: 150px;
+    padding: 5% 5% 0% 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.aside:first-child
+{
+    margin-top: 0%;
+}
+
+.left
+{
+    float: left;
+}
+.right
+{
+    float: right;
+}
+
+.mainContent
+{
+    background-color: #B65B80;
+    width: 50%;
+    padding: 2%;
+}
+.section
+{
+    background-color: #DB92AF;
+    width: 95%;
+    height: 30%;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
