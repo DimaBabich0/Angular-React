@@ -1,0 +1,22 @@
+<h2>Выберите факт о самом большом...</h2>
+
+<div>
+    <button (click)="counter = 1">Автомобиле</button>
+    <button (click)="counter = 2">Самолете</button>
+    <button (click)="counter = 3">Корабле</button>
+</div>
+
+<div [ngSwitch]="counter">
+    <div *ngSwitchCase="1">
+        <p>Самый большой автомобиль - "{{ autoName }}"</p>
+    </div>
+    <div *ngSwitchCase="2">
+        <p>Самый большой самолет - "{{ airplaneName | uppercase }}"</p>
+    </div>
+    <div *ngSwitchCase="3">
+        <p>Самый большой корабль - "{{ shipName  | lowercase }}"</p>
+    </div>
+    <div *ngSwitchDefault>
+        <p>Объект не выбран...</p>
+    </div>
+</div>
