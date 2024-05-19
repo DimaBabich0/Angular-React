@@ -1,0 +1,28 @@
+nav
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+nav a
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    padding: 0px 10px;
+    border-right: 1px solid grey;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+}
+nav a:last-child
+{
+    border-right: 0px;
+}
+
+nav a:hover
+{
+    opacity: 1;
+}
