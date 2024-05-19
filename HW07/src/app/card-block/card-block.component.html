@@ -1,0 +1,8 @@
+<div class="product">
+    <h3>{{ProductName}}</h3>
+    <p>{{ProductPrice}}</p>
+    <button (click)="showDescription()">Показать текст</button>
+    <div *ngIf="isVisible">
+        <p>{{ProductDescription}}</p>
+    </div>
+</div>
