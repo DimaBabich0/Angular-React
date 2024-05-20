@@ -1,0 +1,36 @@
+<form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+  <div>
+      <label>Имя</label>
+      <br>
+      <input name="name" formControlName="name"/>
+
+      @if(myForm.controls["name"].invalid && myForm.controls["name"].touched)
+      {
+        <div class="alert">Не указано имя</div>
+      }
+  </div>
+
+  <div>
+      <label>Email</label>
+      <br>
+      <input name="email" formControlName="email" />
+
+      @if(myForm.controls["email"].invalid && myForm.controls["email"].touched)
+      {
+        <div class="alert">Некорректный email</div>
+      }
+  </div>
+  
+  <div>
+      <label>Телефон</label>
+      <br>
+      <input name="phone" formControlName="phone" />
+
+      @if(myForm.controls["phone"].invalid && myForm.controls["phone"].touched)
+      {
+        <div class="alert">Некорректный номер телефона</div>
+      }
+  </div>
+
+  <button [disabled]="myForm.invalid">Отправить </button>
+</form>
