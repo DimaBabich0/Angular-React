@@ -1,0 +1,21 @@
+table
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:first-child > *
+{
+    background-color: #a7a7a7;
+}
+
+th, td
+{
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th
+{
+    background-color: #e4e4e4;
+}

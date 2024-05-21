@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  @for(user of users; track $index)
+  {
+    <tr>
+      <th>{{user?.name}}</th>
+      <th>{{user?.age}}</th>
+    </tr>
+  }
+</table>
