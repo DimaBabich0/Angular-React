@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW01 (part 2)</title>
+</head>
+<body>
+    <div id="info"></div>
+    <div id="images"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const city =
+        {
+            name: 'Odesa',
+            county: 'Ukraine',
+            foundationYear: 1794,
+        };
+
+        const photos = ['assets/image1.jpg', 'assets/image2.jpg', 'assets/image3.jpg'];
+        
+        const styleText =
+        {
+            display: "flex",
+            flexDirection: "column",
+            fontFamily: "Verdana",
+            padding: "0px 10px"
+        }
+
+        const styleImage =
+        {
+            border: "1px solid",
+            borderRadius: "3px",
+            padding: "5px",
+            height: "300px"
+        }
+
+        ReactDOM.createRoot(document.getElementById("info")).render(
+            <div style={styleText}>
+                <h1>{city.name}</h1>
+                <p>Название страны: {city.county}</p>
+                <p>Год основания: {city.foundationYear}</p>
+            </div>
+        );
+
+        ReactDOM.createRoot(document.getElementById("images")).render(
+            <div>
+                <img style={styleImage} src={photos[0]}></img>
+                <img style={styleImage} src={photos[1]}></img>
+                <img style={styleImage} src={photos[2]}></img>
+            </div>
+        );
+    </script>
+</body>
+</html>
