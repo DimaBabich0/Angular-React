@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW11 (part 1)</title>
+</head>
+<body>
+    <div id="info"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const styleRow = 
+        {
+            display: 'flex',
+            flexDirection: 'row',
+            width:'50%',
+        }
+        const styleBlock =
+        {
+            width:'100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        }
+        
+        const book =
+        {
+            title: 'Робинзон Крузо',
+            authorFullName: 'Даниель Дефо',
+            genre: 'Роман',
+            amountPages: 607,
+        };
+
+        const reviews = [
+            {
+                author: 'Andy Madsen',
+                rating: 5,
+                text: 'This is, hands down, my favorite novel of all time. Rich detail, gripping plot, profound character development, insightful meditations, and the meeting of two radically different worlds in Robinson and the cannibals. I never stop reading this book. When I finish I start again. I love Robinson and Friday as if they were a real life father and brother.'
+            }, 
+            {
+                author: 'Taras Voitovych',
+                rating: 4,
+                text: 'Книга про те як слідувати своєму покликанню і приймати все що життя тобі послало. Написана 300 років тому трохи дивно читати в наш час.'
+            }, 
+            {
+                author: 'Daria Highfly',
+                rating: 3,
+                text: 'Поняла, что мне не совсем подходят приключенческие книги. Читать очень приятно и легко: просто язык, небольшой объем. Однако, в книге одни действия, почти не за что зацепиться мыслью. В целом, книга понравилась, но хочется после прочтения оставаться с зацепками «о чем стоит задуматься».'
+            }
+        ];
+        
+        ReactDOM.createRoot(document.getElementById("info")).render(
+            <div>
+                <h2>Книга</h2>
+                <div>
+                    <p>Название: {book.title}</p>
+                    <p>Автор: {book.authorFullName}</p>
+                    <p>Жанр: {book.genre}</p>
+                    <p>Кол-во страниц: {book.amountPages}</p>
+                </div>
+                
+                <h2>Отзывы</h2>
+                <div>
+                    {reviews.map(review => (
+                        <div>
+                            <h3>{review.author}</h3>
+                            <p>{review.text}</p>
+                            <p>Рейтинг: {review.rating}/5</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    </script>
+</body>
+</html>

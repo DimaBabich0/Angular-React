@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW11 (part 2)</title>
+</head>
+<body>
+    <div id="info"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const styleRow = 
+        {
+            display: 'flex',
+            flexDirection: 'row',
+            width:'50%',
+        }
+        const styleImage =
+        {
+            width:'300px',
+            margin: '20px'
+        }
+        const styleBlock =
+        {
+            width:'100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        }
+        
+        const userMusic =
+        {
+            name: 'Darling Violetta',
+            members: [
+                {name: 'Cami Elen', position: 'Vocals'},
+                {name: 'Gerri Sutyak', position: 'Cello'},
+                {name: 'Michael Renninger', position: 'Bass'}
+            ], 
+            albums: [
+                { name: 'Bath Water Flowers (1997)', img: 'https://t2.genius.com/unsafe/701x0/https%3A%2F%2Fimages.genius.com%2F486cdd6003e834e6e2b3d5414a26d2a4.600x600x1.jpg' },
+                { name: 'The Kill You EP (1999)', img: 'https://t2.genius.com/unsafe/701x0/https%3A%2F%2Fimages.genius.com%2F12aefb8ad4694fb66e828fcf737f67af.600x600x1.jpg' },
+                { name: 'Parlour (2003)', img: 'https://t2.genius.com/unsafe/701x0/https%3A%2F%2Fimages.genius.com%2Fd8ccf5e5959cba89385cc618b4bd54e1.600x600x1.jpg' }
+            ]
+        }
+        
+        ReactDOM.createRoot(document.getElementById("info")).render(
+            <div>
+                <h2>Музыка</h2>
+                <div>
+                    <p>Название: {userMusic.name}</p>
+                    <p>Члены группы:</p>
+                    <ul>
+                        {userMusic.members.map(member => (
+                            <li>{member.name} - {member.position}</li>
+                        ))}
+                    </ul>    
+                </div>
+                
+                <h2>Альбомы:</h2>
+                <div style={styleRow}>
+                    {userMusic.albums.map(album => (
+                        <div style={styleBlock}>
+                            <p>{album.name}</p>
+                            <img style={styleImage} src={album.img} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    </script>
+</body>
+</html>

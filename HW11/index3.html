@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW11 (part 3)</title>
+</head>
+<body>
+    <div id="info"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const imageStyle =
+        {
+            width:'300px',
+            margin: '20px'
+        }
+
+        const dish =
+        {
+            name: 'Зити',
+            ingredients: [
+                'Макароны из твёрдых сортов пшеницы (желательно — зити) — 500 г',
+                'Томаты в собственном соку — 500 г', 'Томатная паста — 1 ст.л.',
+                'Лук репчатый — 3–4 луковицы',
+                'Чеснок — 2–3 зубчика',
+                'Моцарелла сухая — 200–300 г',
+                'Рикотта (или сметана) — 250 г',
+                'Пармезан — 100 г',
+                'Колбаски нескольких видов (желательно чоризо, но можно охотничьи и краковскую) — 500–600 г'
+            ],
+            steps: [
+                'Пармезан натираем на тёрке. Моцареллу режем тонкими кусочками.',
+                'Лук и чеснок нарезаем мелким кубиком и обжариваем на сковороде.',
+                'Колбасы режем кружочками или кубиками и добавляем к луку.',
+                'Томаты из банки измельчаем.',
+                'Как только лук слегка карамелизовался, добавляем к нему томаты, томатную пасту и 50–100 мл воды, если не спешим и хотим потушить чуть подольше. Солим и перчим.',
+                'Макароны отвариваем до состояния аль денте в подсоленной воде (на 100 г макарон — 1 л воды).',
+                'Отваренные макароны промываем холодной водой.',
+                'Когда вся лишняя влага выпарится из зажарки, можно готовить зити к запеканию.',
+                'В форму для запекания выложить ¾ макарон. Поверх них выкладываем слой моцареллы, следующим слоем идёт рикотта или сметана. Далее кладём ⅔ зажарки, высыпаем остальные макароны, выкладываем оставшуюся зажарку и посыпаем мелко натёртым пармезаном.',
+                'Накрываем фольгой и отправляем в духовку на 40 минут при 180 °C. Последние 10 минут запекаем уже без фольги, чтобы пармезан поджарился.'
+            ],
+            img: 'https://www.allrecipes.com/thmb/rg8VkBSqBPq88nHKj6WXN8vh4iE=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/18031-baked-ziti-ii-DDMFS-4x3-45e614088a504a67b9a9dde7001be4ee.jpg'
+        }
+
+        ReactDOM.createRoot(info).render(
+            <div>
+                <h2>Блюдо</h2>
+                <div>
+                    <p>Название: {dish.name}</p>
+                    <p>Ингредиенты:</p>
+                    <ul>
+                        {dish.ingredients.map(ingredient => (
+                            <li>{ingredient}</li>
+                        ))}
+                    </ul>    
+                </div>
+
+                <h2>Рецепт:</h2>
+                <div>
+                    <ol>
+                    {dish.steps.map(step => (
+                        <li>{step}</li>
+                    ))}
+                    </ol>
+                </div>
+                <img style={imageStyle} src={dish.img} alt={dish.name} />
+            </div>
+        );
+    </script>
+</body>
+</html>
